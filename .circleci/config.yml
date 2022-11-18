@@ -93,5 +93,6 @@ workflows:
           requires:
             - build
       - deploy:
+          context: org-global
           requires:
             - hold
