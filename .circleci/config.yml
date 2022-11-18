@@ -53,7 +53,8 @@ jobs:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
           command: |
-            echo "# TODO: In
+            echo "TODO: Install, build, deploy in both apps"
+            npm run deploy
   # deploy step will run only after manual approval
   deploy:
     docker:
@@ -67,9 +68,9 @@ jobs:
       - checkout
       - run:
           name: Deploy App
-          # TODO: Install, build, deploy in both apps"
+          # TODO: Install, build, deploy in both apps
           command: |
-            echo "# TODO: Install, build, deploy in both apps"
+            echo "TODO: Install, build, deploy in both apps"
             npm run deploy
 
 workflows:
