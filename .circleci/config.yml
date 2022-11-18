@@ -62,7 +62,7 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             echo "TODO: Install, build, deploy in both apps"
-            eb init udagram-api --platform node.js --region us-east-1 --artifacts www/Archive.zip
+            eb init udagram-api --platform node.js --region us-east-1 --artifact www/Archive.zip
             npm run deploy
 
 workflows:
