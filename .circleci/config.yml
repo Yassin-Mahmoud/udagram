@@ -67,7 +67,7 @@ jobs:
       - checkout
       - run:
           name: Deploy App
-          # TODO: Install, build, deploy in both apps
+          # TODO: Install, build, deploy in both apps"
           command: |
             echo "# TODO: Install, build, deploy in both apps"
             npm run deploy
@@ -87,4 +87,3 @@ workflows:
       - deploy:
           requires:
             - hold
-#yassin
