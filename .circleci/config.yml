@@ -46,6 +46,12 @@ jobs:
           name: API Build
           command: |
             echo "TODO: Build the backend API"
+      # deploying
+      - run:
+          name: Deploy App
+          # TODO: Install, build, deploy in both apps
+          command: |
+            echo "# TODO: In
   # deploy step will run only after manual approval
   deploy:
     docker:
@@ -68,15 +74,14 @@ workflows:
   udagram:
     jobs:
       - build
-      - deploy
-      # - hold:
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
-      #     type: approval
-      #     requires:
-      #       - build
-      # - deploy:
-      #     requires:
-      #       - hold
+      - hold:
+          filters:
+            branches:
+              only:
+                - master
+          type: approval
+          requires:
+            - build
+      - deploy:
+          requires:
+            - hold
