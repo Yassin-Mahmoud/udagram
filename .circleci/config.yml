@@ -50,6 +50,13 @@ jobs:
             echo "TODO: Build the backend API"
       # deploying
       - run:
+          name: Installing deployment needs
+          command: |
+            sudo apt-get -y -qq update
+            sudo apt-get install python3-pip python3-dev build-essential
+            sudo pip3 install awsebcli
+
+      - run:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
           command: |
@@ -66,14 +73,6 @@ jobs:
       - eb/setup
       - aws-cli/setup
       - checkout
-
-      - run:
-          name: Installing deployment needs
-          command: |
-            sudo apt-get -y -qq update
-            sudo apt-get install python3-pip python3-dev build-essential
-            sudo pip3 install awsebcli
-
       - run:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
